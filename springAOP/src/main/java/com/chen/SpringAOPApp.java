@@ -6,7 +6,11 @@ import com.chen.service.ITestService;
 import com.chen.service.TestServiceImpl;
 import com.chen.web.TestController;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import sun.misc.ProxyGenerator;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.lang.reflect.Proxy;
 import java.util.Objects;
 
@@ -30,13 +34,24 @@ public class SpringAOPApp{
         System.err.println("------------------------------------------------");
         testController.test1();*/
 
-        ITestService testService=ctx.getBean(ITestService.class);
+        /*ITestService testService=ctx.getBean(ITestService.class);
         testService.test();
-
+        System.err.println(testService instanceof Proxy);
         ITestService testServiceImpl=ctx.getBean(TestServiceImpl.class);
-        testServiceImpl.test();
+        testServiceImpl.test();*/
+        Class<?>[] ins=new Class[]{ITestService.class};
+        byte bytes[]= ProxyGenerator.generateProxyClass("ChenA",ins);
+        File file=new File("C:\\qa\\ChenA.class");
+        FileWriter fileWriter=new FileWriter(file);
+        try {
+            FileOutputStream stream=new FileOutputStream(file);
+            stream.write(bytes);
+            fileWriter.close();
+            bytes.clone();
+        }catch (Exception e){
 
-        System.err.println(testServiceImpl instanceof ITestService);
+        }
+
 
     }
 }

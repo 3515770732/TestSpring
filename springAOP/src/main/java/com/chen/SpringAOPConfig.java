@@ -10,8 +10,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @ComponentScan("com.chen")
-@EnableAspectJAutoProxy(proxyTargetClass=true)
-//@EnableAspectJAutoProxy
+//@EnableAspectJAutoProxy(proxyTargetClass=true)
+@EnableAspectJAutoProxy
 public class SpringAOPConfig {
 
 
