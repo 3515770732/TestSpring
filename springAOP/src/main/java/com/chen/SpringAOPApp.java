@@ -23,14 +23,20 @@ public class SpringAOPApp{
         System.err.println(str);*/
 
         AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(SpringAOPConfig.class);
-        TestController testController=ctx.getBean(TestController.class);
+        /*TestController testController=ctx.getBean(TestController.class);
         testController.test();
         System.err.println("------------------------------------------------");
         testController.test2("chen");
         System.err.println("------------------------------------------------");
-        testController.test1();
+        testController.test1();*/
 
+        ITestService testService=ctx.getBean(ITestService.class);
+        testService.test();
 
+        ITestService testServiceImpl=ctx.getBean(TestServiceImpl.class);
+        testServiceImpl.test();
+
+        System.err.println(testServiceImpl instanceof ITestService);
 
     }
 }

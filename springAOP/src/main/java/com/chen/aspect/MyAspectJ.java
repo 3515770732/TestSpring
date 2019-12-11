@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyAspectJ {
 
-    //@Pointcut("execution(* com.chen..*.*(..))")
+    @Pointcut("execution(* com.chen..*.*(..))")
     //@Pointcut("args(java.lang.String)")
     //@Pointcut("within(com.chen.service.*)")
-    @Pointcut("@annotation(com.chen.anno.Chen)")
+    //@Pointcut("@annotation(com.chen.anno.Chen)")
     public void pointcut(){
 
     }
