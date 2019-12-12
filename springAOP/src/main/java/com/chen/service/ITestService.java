@@ -6,4 +6,6 @@ package com.chen.service;
  */
 public interface ITestService {
      void test();
+
+     void test1(String name);
 }

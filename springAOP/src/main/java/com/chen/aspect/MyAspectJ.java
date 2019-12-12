@@ -4,6 +4,9 @@ package com.chen.aspect;
  * @description:
  * @author:
  */
+import com.chen.service.ITestService;
+import com.chen.service.ITestServiceB;
+import com.chen.service.TestServiceImpl;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -21,8 +24,10 @@ public class MyAspectJ {
 
     }
 
+    @DeclareParents(value="com.chen.service.*", defaultImpl= TestServiceImpl.class)
+    public static ITestService testService;
 
-    //@Before("pointcut()")
+    @Before("pointcut()")
     public void before(){
         System.err.println("aop----before");
     }
@@ -43,14 +48,20 @@ public class MyAspectJ {
         System.err.println("aop----afterReturning");
     }
 
-    @Around("pointcut()")
+    //@Around("pointcut()")
     public void Around(ProceedingJoinPoint point) throws Throwable {
         System.err.println("ProceedingJoinPoint before around============"+point.getThis());
-        point.proceed();
+        Object[] obj=new Object[point.getArgs().length];
+        if(obj!=null && obj.length>0){
+            obj[0]="456";
+            point.proceed(obj);
+        }else {
+            point.proceed();
+        }
         System.err.println("ProceedingJoinPoint after around============="+point.getTarget());
     }
 
-    @Around("pointcut()")
+    //@Around("pointcut()")
     public void Around1(JoinPoint point) throws Throwable {
         System.err.println("joinPoint before around======================"+point.getThis());
         System.err.println("joinPoint after around======================="+point.getTarget());

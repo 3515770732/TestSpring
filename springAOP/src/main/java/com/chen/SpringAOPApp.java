@@ -34,12 +34,18 @@ public class SpringAOPApp{
         System.err.println("------------------------------------------------");
         testController.test1();*/
 
-        /*ITestService testService=ctx.getBean(ITestService.class);
-        testService.test();
-        System.err.println(testService instanceof Proxy);
-        ITestService testServiceImpl=ctx.getBean(TestServiceImpl.class);
-        testServiceImpl.test();*/
-        Class<?>[] ins=new Class[]{ITestService.class};
+        ITestService testService1=ctx.getBean(ITestService.class);
+        testService1.test();
+        System.err.println(testService1.hashCode());
+        System.err.println("---------------------------------------------------------");
+        ITestService testService2=ctx.getBean(ITestService.class);
+        testService2.test();
+        System.err.println(testService2.hashCode());
+
+        /*ITestService testService=(ITestService)ctx.getBean(ITestServiceImplB.class);
+        testService.test();*/
+
+       /* Class<?>[] ins=new Class[]{ITestService.class};
         byte bytes[]= ProxyGenerator.generateProxyClass("ChenA",ins);
         File file=new File("C:\\qa\\ChenA.class");
         FileWriter fileWriter=new FileWriter(file);
@@ -50,7 +56,7 @@ public class SpringAOPApp{
             bytes.clone();
         }catch (Exception e){
 
-        }
+        }*/
 
 
     }
