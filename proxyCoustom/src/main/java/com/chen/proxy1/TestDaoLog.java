@@ -10,11 +10,11 @@ public class TestDaoLog implements ITestDao {
 
     private ITestDao testDao;
 
-    public TestDaoLog(ITestDao testDao) {
-        this.testDao = testDao;
+    public TestDaoLog() {
     }
 
-    public TestDaoLog() {
+    public TestDaoLog(ITestDao testDao) {
+        this.testDao = testDao;
     }
 
     @Override
