@@ -58,7 +58,7 @@ public class ProxyUtils {
                 paramsContent=paramsContent.substring(0,paramsContent.lastIndexOf(",")-1);
             }
             methodContent+=tab+"public "+returnTypeName+" "+methodName+"("+argsContent+") {"+line
-                    +tab+tab+"System.out.println('log');"+line
+                    +tab+tab+"System.out.println(\"log\");"+line
                     +tab+tab+"target."+methodName+"("+paramsContent+");"+line
                     +tab+"}"+line;
         }
