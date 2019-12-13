@@ -82,7 +82,7 @@ public class ProxyUtils {
             t.call();
             fileMgr.close();
 
-            URL[] urls = new URL[]{new URL("file:C:\\workspace")};
+            URL[] urls = new URL[]{new URL("file:C:\\workspace\\")};
             URLClassLoader urlClassLoader = new URLClassLoader(urls);
             Class clazz = urlClassLoader.loadClass("com.chen.$Proxy");
             Constructor constructor = clazz.getConstructor(targetInf);
