@@ -1,25 +1,20 @@
-package com.chen.proxy1;
+package com.chen.StaticProxy.proxy1;
 
 import com.chen.dao.ITestDao;
 
 /**
- * @description:
+ * @description:静态代理---聚合
  * @author:
  */
-public class TestDaoLog implements ITestDao {
-
+public class TestDaoTime implements ITestDao {
     private ITestDao testDao;
-
-    public TestDaoLog() {
-    }
-
-    public TestDaoLog(ITestDao testDao) {
+    public TestDaoTime(ITestDao testDao) {
         this.testDao = testDao;
     }
 
     @Override
     public void query() {
-        System.err.println("proxy  log.......");
+        System.err.println("proxy  time.......");
         testDao.query();
     }
 

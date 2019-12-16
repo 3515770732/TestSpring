@@ -1,9 +1,9 @@
-package com.chen.proxy;
+package com.chen.StaticProxy.proxy;
 
 import com.chen.dao.TestDaoImpl;
 
 /**
- * @description:
+ * @description:静态代理---继承
  * @author:
  */
 public class TestDaoPowerImpl extends TestDaoImpl {
