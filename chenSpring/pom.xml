@@ -5,17 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.chen</groupId>
-  <artifactId>TestSpring</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>chenSpring</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-      <module>springIOC</module>
-      <module>springAOP</module>
-      <module>proxyCoustom</module>
-    <module>chenSpring</module>
-  </modules>
 
-  <name>TestSpring</name>
+  <name>chenSpring</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -32,7 +25,22 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.0.9.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.6</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.9.0</version>
+    </dependency>
   </dependencies>
 
   <build>
