@@ -9,6 +9,9 @@ import com.chen.dao.IUserDao;
 public class UserServiceImpl implements IUserService {
     IUserDao userDao;
 
+    public void setUserDao(IUserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public void find() {
