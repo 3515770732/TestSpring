@@ -1,6 +1,5 @@
 package com.chen.dao;
 
-import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
 
 /**

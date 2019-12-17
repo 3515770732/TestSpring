@@ -5,7 +5,6 @@ import com.chen.dao.TempDaoFactoryBean;
 import com.chen.service.IUserService;
 import com.chen.utils.AnnotationConfigApplicationContext;
 import com.chen.utils.BeanFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 
 /**
  * Hello world!
