@@ -11,9 +11,9 @@ import java.io.File;
 public class AnnotationConfigApplicationContext {
 
     public void scan(String basePackage){
-        String rootPath=this.getClass().getResource("/").getPath();
-        String basePackagePath=basePackage.replace("\\","\\\\");
-        File file=new File(rootPath+"//"+basePackagePath);
+        String rootPath = this.getClass().getResource("/").getPath();
+        String  basePackagePath =basePackage.replaceAll("\\.","\\\\");
+        File file = new File(rootPath+"//"+basePackagePath);
         String names[]=file.list();
         for(String name:names){
             name=name.replace(".class","");

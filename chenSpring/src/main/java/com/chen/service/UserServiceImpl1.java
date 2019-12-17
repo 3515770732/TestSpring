@@ -7,15 +7,15 @@ import com.chen.dao.IUserDao;
  * @description:
  * @author:
  */
-@Chen("impl")
-public class UserServiceImpl implements IUserService {
+@Chen("impl1")
+public class UserServiceImpl1 implements IUserService {
     IUserDao userDao;
 
     public void setUserDao(IUserDao userDao) {
         this.userDao = userDao;
     }
 
-   /* public UserServiceImpl(IUserDao userDao) {
+   /* public UserServiceImpl1(IUserDao userDao) {
         this.userDao = userDao;
     }*/
 

@@ -27,7 +27,7 @@ public class ChenSpringApp {
         System.err.println(daoFactoryBean.getMsg3());*/
 
         AnnotationConfigApplicationContext applicationContext=new AnnotationConfigApplicationContext();
-        applicationContext.scan("com.chen.utils");
+        applicationContext.scan("com.chen.service");
 
     }
 }
