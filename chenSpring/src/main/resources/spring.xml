@@ -8,8 +8,12 @@
  -->
 <beans default="byType">
     <bean id="dao" class="com.chen.dao.UserDaoImpl"></bean>
-    <bean id="service" class="com.chen.service.UserServiceImpl">
+   <!-- <bean id="service" class="com.chen.service.UserServiceImpl">
         <property name="userDao" ref="dao"></property>
+    </bean>-->
+
+    <bean id="service" class="com.chen.service.UserServiceImpl">
+        <constructor-arg name="userDao" ref="dao" />
     </bean>
 </beans>
 

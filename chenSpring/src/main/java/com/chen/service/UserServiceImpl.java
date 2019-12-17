@@ -9,7 +9,11 @@ import com.chen.dao.IUserDao;
 public class UserServiceImpl implements IUserService {
     IUserDao userDao;
 
-    public void setUserDao(IUserDao userDao) {
+   /* public void setUserDao(IUserDao userDao) {
+        this.userDao = userDao;
+    }*/
+
+    public UserServiceImpl(IUserDao userDao) {
         this.userDao = userDao;
     }
 
